@@ -5,7 +5,7 @@ import store from './store';
 import 'view-design/dist/styles/iview.css';
 import { Message } from 'view-design';
 
-Vue.component(Message);
+Vue.prototype.$Message = Message;
 Vue.config.productionTip = false;
 
 new Vue({
