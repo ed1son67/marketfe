@@ -13,6 +13,11 @@ const routes = [
     component: Home
   },
   {
+    path: '/home',
+    name: 'Home',
+    component: Home
+  },
+  {
     path: '/login',
     name: 'Login',
     component: Login
@@ -24,6 +29,7 @@ const router = new VueRouter({
 });
 
 router.beforeEach((to, from, next) => {
+  // 如果没有登陆，强制跳转到登陆页面
   if (store.state.hadLogin !== true) {
     next(false);
   } else {

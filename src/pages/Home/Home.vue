@@ -1,12 +1,17 @@
 <template>
     <Layout class="home-container">
-      <Header class="home-header">
+      <Header class="home-header" style="height: 70px;">
         <span>腾科超市账单管理系统</span>
       </Header>
       <Layout class="home-main-container">
         <Sider class="home-sider">
-          <Menu class="home-menu" theme="dark" width="auto">
-            <Submenu>
+          <Menu
+            class="home-menu"
+            theme="dark"
+            width="auto"
+            @on-select="selectMenuItem"
+          >
+            <Submenu name="bill">
               <template slot="title">
                 <Icon type="md-document" />
                 <span>账单管理</span>
@@ -18,30 +23,32 @@
                 查询账单
               </MenuItem>
             </Submenu>
-            <Submenu>
+            <Submenu name="user">
               <template slot="title">
                 <Icon type="ios-people" />
                 <span>用户管理</span>
               </template>
-              <MenuItem name="1">
-                查询账单
+              <MenuItem name="3">
+                修改密码
               </MenuItem>
-              <MenuItem name="2">
-                查询账单
-              </MenuItem>
-            </Submenu>
-            <Submenu>
-              <template slot="title">
-                <Icon type="ios-filing" />
-                <span>供应商管理</span>
-              </template>
-              <MenuItem name="1">
-                查询账单
-              </MenuItem>
-              <MenuItem name="2">
+              <MenuItem name="4">
                 查询账单
               </MenuItem>
             </Submenu>
+            <div v-if="isAdmin">
+              <Submenu name="supplier">
+                <template slot="title">
+                  <Icon type="ios-filing" />
+                  <span>供应商管理</span>
+                </template>
+                <MenuItem name="5">
+                  查询账单
+                </MenuItem>
+                <MenuItem name="6">
+                  查询账单
+                </MenuItem>
+              </Submenu>
+            </div>
           </Menu>
         </Sider>
         <Layout>
@@ -63,6 +70,7 @@
 
 <script>
   import { Layout, Sider, Header, Content, Menu, MenuItem, Submenu } from 'view-design';
+  import { mapGetters } from 'vuex';
   export default {
     name: 'Home',
     components: {
@@ -73,7 +81,20 @@
       Header,
       Layout,
       MenuItem,
-    }
+    },
+    computed: {
+      ...mapGetters({
+        isAdmin: 'isAdmin'
+      })
+    },
+    methods: {
+      selectMenuItem (name) {
+        console.log(name);
+        // 每一个item都有一个name，点击的时候根据name进行页面的切换
+        this.$router.push(name);
+        console.log(this.isAdmin);
+      }
+    },
   };
 </script>
 
@@ -85,10 +106,10 @@
     height: 100vh;
   }
   .home-header {
-      color: #fff;
-      background: #fff;
-      box-shadow: 0 1px 1px rgba(0,0,0,.1);
-      padding: 2px 9px;
+    font-size: 18px;
+    line-height: 70px !important;
+    padding: 0 20px !important;
+    color: #fff;
   }
   .home-sider {
     width: 240px;
