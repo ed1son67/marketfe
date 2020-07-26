@@ -49,9 +49,9 @@
             <div class="welcome-page-container">
               <div class="welcome-page-content">
                 <h1>欢迎使用 腾科超市账单管理系统</h1>
-                <p>账单管理：对首页的banner图片进行修改查看</p>
-                <p>用户管理：对官网展示产品进行查看，上传以及修改</p>
-                <p>供应商管理：对官网展示产品进行查看，上传以及修改</p>
+                <p>账单管理：增删查改账单信息</p>
+                <p>用户管理：增删查改用户信息</p>
+                <p>供应商管理：增删查改供应商信息</p>
               </div>
             </div>
             <router-view></router-view>
