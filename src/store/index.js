@@ -1,6 +1,8 @@
 import Vue from 'vue';
 import Vuex from 'vuex';
-
+import getters from './getters';
+import actions from './actions';
+import mutations from './mutations';
 Vue.use(Vuex);
 
 const state = {
@@ -8,17 +10,9 @@ const state = {
   level: 1
 };
 
-const getters = {
-  isAdmin (state) {
-    // level为1是管理员权限，出供应商选项
-    return state.level === 1;
-  }
-};
-
 export default new Vuex.Store({
-  mutations: {},
-  actions: {},
-  modules: {},
+  actions,
   state,
+  mutations,
   getters
 });

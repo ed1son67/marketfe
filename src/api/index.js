@@ -19,3 +19,7 @@ axios.interceptors.response.use((res) => {
       consola.error(err.message);
   }
 );
+
+export const login = (data) => {
+    return axios.post('/', data);
+};

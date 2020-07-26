@@ -1,11 +1,11 @@
 <template>
-  <div class="container" >
+  <div class="container">
     <div class="login-container">
       <h1>腾科超市账单管理系统</h1>
       <div class="form-container">
         <div class="form-item">
           <label for="username">用户名：</label>
-          <input id="username" v-model="userName" type="text">
+          <input id="username" v-model="username" type="text">
           <div v-show="rules.username" class="tips-container">用户名不可以为空</div>
         </div>
         <div class="form-item">
@@ -27,11 +27,12 @@ v-model="password"
 </template>
 
 <script>
+  import types from '@/store/types';
   export default {
     name: 'Login',
     data () {
       return {
-        userName: '',
+        username: '',
         password: '',
         rules: {
           username: false,
@@ -41,13 +42,13 @@ v-model="password"
     },
     methods: {
       validate () {
-        if (this.userName === '') {
+        if (this.username === '') {
           this.rules.username = true;
         }
         if (this.password === '') {
           this.rules.password = true;
         }
-        if (this.userName !== '' && this.password !== '') {
+        if (this.username !== '' && this.password !== '') {
           this.rules.username = false;
           this.rules.password = false;
           return true;
@@ -61,6 +62,7 @@ v-model="password"
         }
       },
       login () {
+        this.$store.dispatch(types.USER_LOGIN);
       }
     }
   };
