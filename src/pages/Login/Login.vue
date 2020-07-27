@@ -62,7 +62,7 @@ v-model="password"
         }
       },
       login () {
-        this.$store.dispatch(types.USER_LOGIN, {
+        this.$store.dispatch(types.LOGIN, {
           username: this.username,
           password: this.password
         });

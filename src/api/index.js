@@ -8,10 +8,13 @@ axios.defaults.baseURL = url;
 
 // 添加全局错误拦截器
 axios.interceptors.response.use((res) => {
-    if (res.code !== 200) {
-        Vue.prototype.$Message.error(res.message);
-        consola.error(res.message);
+    const { code, msg, data } = res.data;
+    if (code !== 200) {
+        Vue.prototype.$Message.error(msg);
+        consola.error(msg);
     }
+    // 将data解析出来往下传
+    return data;
   },
   (err) => {
     // 网络错误会走到这里
