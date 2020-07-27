@@ -2,7 +2,7 @@ import axios from 'axios';
 import consola from 'consola';
 import Vue from 'vue';
 
-const url = '';
+const url = 'http://localhost:8090';
 
 axios.defaults.baseURL = url;
 
@@ -21,5 +21,5 @@ axios.interceptors.response.use((res) => {
 );
 
 export const login = (data) => {
-    return axios.post('/', data);
+    return axios.post('/login', data);
 };
