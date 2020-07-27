@@ -26,3 +26,55 @@ axios.interceptors.response.use((res) => {
 export const login = (data) => {
     return axios.post('/login', data);
 };
+
+export const addUser = (data) => {
+    return axios.post('/addUser', data);
+};
+
+export const getUsers = () => {
+    return axios.get('/getUsers');
+};
+
+export const deleteUser = (data) => {
+    return axios.post('/deleteUser', data);
+};
+
+export const modifyUserPassword = (data) => {
+    return axios.post('/modifyUserPassword', data);
+};
+
+export const getAllProviders = () => {
+    return axios.get('/getAllProviders');
+};
+
+export const addProvider = (data) => {
+    return axios.post('/addProvider', data);
+};
+
+export const deleteProvider = (data) => {
+    return axios.post('/deleteProvider', data);
+};
+
+export const modifyProvider = (data) => {
+    return axios.post('/modifyProvider', data);
+};
+
+export const getAllOrders = (data) => {
+    return axios.get('/getAllOrders');
+};
+
+export const addOrder = (data) => {
+    return axios.post('/addOrder', data);
+};
+
+export const modifyOrder = (data) => {
+    return axios.post('/modifyOrder', data);
+};
+
+export const deleteOrder = (data) => {
+    return axios.post('/deleteOrder', data);
+};
+
+export const getOrdersByProviderName = (name) => {
+    return axios.get('/getOrdersByProviderName?providerName=' + name);
+};
