@@ -1,6 +1,6 @@
 <template>
     <Form
-        ref="modalForm"
+        ref="userModalForm"
         :model="formData"
         :rules="userFormRules"
     >
@@ -20,7 +20,7 @@
             </Input>
         </FormItem>
         <FormItem>
-            <Button class="floatRight" type="primary" @click="handleSubmit('modalForm')">确认</Button>
+            <Button class="floatRight" type="primary" @click="handleSubmit">更新</Button>
         </FormItem>
     </Form>
 </template>
@@ -61,7 +61,7 @@
         },
         methods: {
             handleSubmit () {
-                this.$refs['modalForm'].validate((valid) => {
+                this.$refs['userModalForm'].validate((valid) => {
                     if (valid) {
                         this.$store.dispatch(types.MODIFY_PASSWORD, this.formData);
                         this.$emit('confirm');

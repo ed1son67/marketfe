@@ -25,12 +25,12 @@
             </MenuItem>
         </Submenu>
         <div v-if="isAdmin">
-            <Submenu name="supplier">
+            <Submenu name="provider">
                 <template slot="title">
                     <Icon type="ios-filing" />
                     <span>供应商模块</span>
                 </template>
-                <MenuItem name="supplier">
+                <MenuItem name="provider">
                     供应商管理
                 </MenuItem>
             </Submenu>

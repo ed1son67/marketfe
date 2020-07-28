@@ -18,55 +18,55 @@ export default {
         });
     },
     async [types.ADD_USER] ({ dispatch }, data) {
-        return api.addUser(data).then((res) => {
+        return api.addUser(data).then(() => {
             Vue.prototype.$Message.success('添加用户成功！');
             dispatch(types.GET_USERS);
         });
     },
     async [types.ADD_BILL] ({ dispatch }, data) {
-        return api.addBill(data).then((res) => {
+        return api.addBill(data).then(() => {
             Vue.prototype.$Message.success('添加账单成功！');
             dispatch(types.GET_BILLS);
         });
     },
     async [types.ADD_PROVIDER] ({ dispatch }, data) {
-        return api.addProvider(data).then((res) => {
+        return api.addProvider(data).then(() => {
             Vue.prototype.$Message.success('添加供应商成功！');
             dispatch(types.GET_PROVIDERS);
         });
     },
     async [types.DELETE_USER] ({ dispatch }, data) {
-        return api.deleteUser(data).then((res) => {
+        return api.deleteUser(data).then(() => {
             Vue.prototype.$Message.success('删除用户成功！');
             dispatch(types.GET_USERS);
         });
     },
     async [types.DELETE_BILL] ({ dispatch }, data) {
-        return api.deleteBill(data).then((res) => {
+        return api.deleteBill(data).then(() => {
             Vue.prototype.$Message.success('删除账单成功！');
             dispatch(types.GET_BILLS);
         });
     },
     async [types.DELETE_PROVIDER] ({ dispatch }, data) {
-        return api.deleteProvider(data).then((res) => {
+        return api.deleteProvider(data).then(() => {
             Vue.prototype.$Message.success('删除供应商成功！');
             dispatch(types.GET_PROVIDERS);
         });
     },
     async [types.MODIFY_PASSWORD] ({ dispatch }, data) {
-        return api.modifyUserPassword(data).then((data) => {
+        return api.modifyUserPassword(data).then(() => {
             Vue.prototype.$Message.success('修改密码成功！');
             dispatch(types.GET_USERS);
         });
     },
     async [types.MODIFY_BILL] ({ dispatch }, data) {
-        return api.modifyBill(data).then((data) => {
+        return api.modifyBill(data).then(() => {
             Vue.prototype.$Message.success('修改账单信息成功！');
             dispatch(types.GET_BILLS);
         });
     },
     async [types.MODIFY_PROVIDER] ({ dispatch }, data) {
-        return api.modifyBill(data).then((data) => {
+        return api.modifyProvider(data).then(() => {
             Vue.prototype.$Message.success('修改供应商信息成功！');
             dispatch(types.GET_PROVIDERS);
         });

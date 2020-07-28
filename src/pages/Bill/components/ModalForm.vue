@@ -1,7 +1,7 @@
 <template>
     <Form
-            ref="billForm"
-            class="component-margin bill-form-container"
+            ref="billModalForm"
+            class="component-margin"
             :model="billFormData"
             :rules="rules"
             label-position="left"
@@ -20,7 +20,7 @@
             <Input v-model="billFormData.signature" type="textarea" placeholder="账单内容" />
         </FormItem>
         <FormItem>
-            <Button type="primary" class="floatRight" @click="handleSubmit('billForm')">录入</Button>
+            <Button type="primary" class="floatRight" @click="handleSubmit">更新</Button>
         </FormItem>
     </Form>
 </template>
@@ -35,6 +35,12 @@
             FormItem,
             Input,
             Button,
+        },
+        props: {
+            id: {
+                type: Number,
+                default: -1
+            }
         },
         data () {
             return {
@@ -64,13 +70,14 @@
             handleSubmit () {
                 const { signature, providerName, totalPrice, content } = this.billFormData;
                 const data = {
+                    id: this.id,
                     createdDate: new Date(),
                     signature,
                     providerName,
                     totalPrice,
                     content,
                 };
-                this.$refs['billForm'].validate((res) => {
+                this.$refs['billModalForm'].validate((res) => {
                     if (res) {
                         this.$store.dispatch(types.MODIFY_BILL, data);
                         this.$emit('confirm');
@@ -80,9 +87,3 @@
         },
     };
 </script>
-
-<style lang="scss">
-    .bill-form-container {
-        width: auto;
-    }
-</style>

@@ -44,7 +44,7 @@
         data () {
             return {
                 showModal: false,
-                billData: null
+                billID: -1
             };
         },
         computed: {
@@ -59,7 +59,7 @@
         methods: {
             handleUpdate (data) {
                 this.showModal = true;
-                this.billData = data;
+                this.billID = data.id;
                 console.log(data);
             },
             handleDelete (e) {

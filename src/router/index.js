@@ -4,6 +4,7 @@ import Home from '../pages/Home/Home.vue';
 import Login from '../pages/Login/Login.vue';
 import User from '../pages/User/User.vue';
 import Bill from '../pages/Bill/Bill.vue';
+import Provider from '../pages/provider/Provider';
 import Welcome from '../pages/Welcome/Welcome.vue';
 import store from '../store';
 
@@ -30,6 +31,11 @@ const routes = [
         path: 'bill',
         name: 'Bill',
         component: Bill
+      },
+      {
+        path: 'provider',
+        name: 'Provider',
+        component: Provider
       },
     ]
   },
