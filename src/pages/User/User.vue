@@ -46,7 +46,6 @@
         },
         methods: {
             handleDelete (data) {
-                console.log(data);
                 this.$store.dispatch(types.DELETE_USER, { id: data.id });
             }
         }

@@ -9,6 +9,7 @@
 <script>
     import CustomTable from '../../../components/CustomTable';
     import { mapState } from 'vuex';
+    import types from '../../../store/types';
     export default {
         name: 'BillTable',
         components: {
@@ -49,7 +50,8 @@
             })
         },
         methods: {
-            handleDelete () {
+            handleDelete (data) {
+                this.$store.dispatch(types.DELETE_BILL, {id: data.id});
             }
         }
     };

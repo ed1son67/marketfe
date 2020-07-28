@@ -70,7 +70,7 @@ export default {
     },
     async [types.GET_BILLS_BY_PROVIDER_NAME] ({ commit }, name) {
         return api.getOrdersByProviderName(name).then((res) => {
-            return res;
+            commit(types.GET_PROVIDERS, res);
         });
     },
 };

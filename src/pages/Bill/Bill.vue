@@ -3,7 +3,7 @@
         <Divider orientation="left">查询账单信息：</Divider>
         <SearchForm />
         <BillTable
-                :bills-data="bills"
+            :bills-data="bills"
         />
         <Divider orientation="left">录入账单：</Divider>
         <BillForm />

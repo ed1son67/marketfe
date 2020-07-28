@@ -82,8 +82,8 @@
                 this.title = '确认删除？';
                 this.showModal = true;
             },
-            handleUpdate (e) {
-                this.$emit('update', e);
+            handleUpdate (data) {
+                this.$emit('update', data);
             }
         }
     };
