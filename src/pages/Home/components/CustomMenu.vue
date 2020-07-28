@@ -2,6 +2,8 @@
     <Menu
             theme="dark"
             width="auto"
+            :open-names="openNames"
+            :active-name="activeName"
             @on-select="selectMenuItem"
     >
         <Submenu name="bill">
@@ -60,6 +62,16 @@
             };
         },
         computed: {
+            openNames () {
+                const route = this.$route.name.toLowerCase();
+                console.log(this.$route);
+                return [route];
+            },
+            activeName () {
+                const route = this.$route.name;
+                console.log(route);
+                return route.toLowerCase();
+            },
             ...mapGetters({
                 isAdmin: 'isAdmin'
             })
