@@ -17,34 +17,40 @@ export default {
             }
         });
     },
-    async [types.ADD_USER] ({ commit }, data) {
+    async [types.ADD_USER] ({ dispatch, commit }, data) {
         return api.addUser(data).then((res) => {
             Vue.prototype.$Message.success('添加用户成功！');
+            dispatch(types.GET_USERS);
         });
     },
-    async [types.ADD_BILL] ({ commit }, data) {
+    async [types.ADD_BILL] ({ dispatch, commit }, data) {
         return api.addOrder(data).then((res) => {
             Vue.prototype.$Message.success('添加账单成功！');
+            dispatch(types.GET_BILLS);
         });
     },
-    async [types.ADD_PROVIDER] ({ commit }, data) {
+    async [types.ADD_PROVIDER] ({ dispatch, commit }, data) {
         return api.addProvider(data).then((res) => {
             Vue.prototype.$Message.success('添加供应商成功！');
+            dispatch(types.GET_PROVIDERS);
         });
     },
-    async [types.DELETE_USER] ({ commit }, data) {
+    async [types.DELETE_USER] ({ dispatch, commit }, data) {
         return api.deleteUser(data).then((res) => {
             Vue.prototype.$Message.success('删除用户成功！');
+            dispatch(types.GET_USERS);
         });
     },
-    async [types.DELETE_BILL] ({ commit }, data) {
+    async [types.DELETE_BILL] ({ dispatch, commit }, data) {
         return api.deleteOrder(data).then((res) => {
             Vue.prototype.$Message.success('删除账单成功！');
+            dispatch(types.GET_BILLS);
         });
     },
-    async [types.DELETE_PROVIDER] ({ commit }, data) {
+    async [types.DELETE_PROVIDER] ({ dispatch, commit }, data) {
         return api.deleteProvider(data).then((res) => {
-            Vue.prototype.$Message.success('删除用户成功！');
+            Vue.prototype.$Message.success('删除供应商成功！');
+            dispatch(types.GET_PROVIDERS);
         });
     },
     async [types.GET_USERS] ({ commit }) {

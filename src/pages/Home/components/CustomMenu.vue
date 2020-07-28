@@ -28,13 +28,10 @@
             <Submenu name="supplier">
                 <template slot="title">
                     <Icon type="ios-filing" />
-                    <span>供应商管理</span>
+                    <span>供应商模块</span>
                 </template>
-                <MenuItem name="5">
-                    查询账单
-                </MenuItem>
-                <MenuItem name="6">
-                    查询账单
+                <MenuItem name="supplier">
+                    供应商管理
                 </MenuItem>
             </Submenu>
         </div>

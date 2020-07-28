@@ -1,29 +1,30 @@
 <template>
     <Form
-        ref="formInline"
+        ref="userForm"
         class="component-margin"
-        :model="formInline"
-        :rules="ruleInline"
+        :model="userForm"
+        :rules="userFormRules"
         inline
     >
-        <FormItem prop="user">
-            <Input v-model="formInline.user" type="text" placeholder="用户名">
+        <FormItem prop="username">
+            <Input v-model="userForm.username" type="text" placeholder="用户名">
                 <Icon slot="prepend" type="ios-person-outline"></Icon>
             </Input>
         </FormItem>
         <FormItem prop="password">
-            <Input v-model="formInline.password" type="password" placeholder="密码">
+            <Input v-model="userForm.password" type="password" placeholder="密码">
                 <Icon slot="prepend" type="ios-lock-outline"></Icon>
             </Input>
         </FormItem>
         <FormItem>
-            <Button type="primary" @click="handleSubmit('formInline')">确认</Button>
+            <Button type="primary" @click="handleSubmit('userForm')">确认</Button>
         </FormItem>
     </Form>
 </template>
 
 <script>
     import { Form, FormItem, Input, Button } from 'view-design';
+    import types from '../../../store/types';
     export default {
         name: 'UserForm',
         components: {
@@ -34,12 +35,12 @@
         },
         data () {
             return {
-                formInline: {
-                    user: '',
+                userForm: {
+                    username: '',
                     password: ''
                 },
-                ruleInline: {
-                    user: [
+                userFormRules: {
+                    username: [
                         { required: true, message: '请输入用户名', trigger: 'blur' }
                     ],
                     password: [
@@ -53,6 +54,7 @@
         },
         methods: {
             handleSubmit () {
+                this.$store.dispatch(types.ADD_USER, this.userForm);
             }
         }
     };

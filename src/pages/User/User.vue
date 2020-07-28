@@ -8,15 +8,12 @@
         />
         <Divider orientation="left">添加用户：</Divider>
         <UserForm />
-        <Divider orientation="left">修改密码</Divider>
-        <PasswordForm />
     </div>
 </template>
 
 <script>
     import CustomTable from '../../components/CustomTable';
     import UserForm from './components/UserForm';
-    import PasswordForm from './components/PasswordForm';
     import types from '../../store/types';
     import { mapState } from 'vuex';
     import { Divider } from 'view-design';
@@ -25,7 +22,6 @@
         components: {
             CustomTable,
             UserForm,
-            PasswordForm,
             Divider
         },
         data () {
@@ -49,8 +45,9 @@
             this.$store.dispatch(types.GET_USERS);
         },
         methods: {
-            handleDelete (e) {
-                console.log(e);
+            handleDelete (data) {
+                console.log(data);
+                this.$store.dispatch(types.DELETE_USER, { id: data.id });
             }
         }
     };
