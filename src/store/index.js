@@ -7,6 +7,8 @@ Vue.use(Vuex);
 
 const state = {
   users: [],
+  bills: [],
+  providers: [],
   hadLogin: true,
   level: 1
 };

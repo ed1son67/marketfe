@@ -11,7 +11,7 @@ export default {
     [types.GET_PROVIDERS]: (state, providers) => {
         state.providers = providers;
     },
-    [types.GET_ORDERS]: (state, orders) => {
-        state.orders = orders;
+    [types.GET_BILLS]: (state, bills) => {
+        state.bills = bills;
     }
 };

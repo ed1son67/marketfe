@@ -9,25 +9,19 @@
         <Submenu name="bill">
             <template slot="title">
                 <Icon type="md-document" />
-                <span>账单管理</span>
+                <span>账单模块</span>
             </template>
-            <MenuItem name="1">
-                查询账单
-            </MenuItem>
-            <MenuItem name="2">
-                查询账单
+            <MenuItem name="bill">
+                账单管理
             </MenuItem>
         </Submenu>
         <Submenu name="user">
             <template slot="title">
                 <Icon type="ios-people" />
-                <span>用户管理</span>
+                <span>用户模块</span>
             </template>
             <MenuItem name="user">
                 用户管理
-            </MenuItem>
-            <MenuItem name="4">
-                查询账单
             </MenuItem>
         </Submenu>
         <div v-if="isAdmin">

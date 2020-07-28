@@ -22,7 +22,7 @@ export default {
             Vue.prototype.$Message.success('添加用户成功！');
         });
     },
-    async [types.ADD_ORDER] ({ commit }, data) {
+    async [types.ADD_BILL] ({ commit }, data) {
         return api.addOrder(data).then((res) => {
             Vue.prototype.$Message.success('添加账单成功！');
         });
@@ -37,7 +37,7 @@ export default {
             Vue.prototype.$Message.success('删除用户成功！');
         });
     },
-    async [types.DELETE_ORDER] ({ commit }, data) {
+    async [types.DELETE_BILL] ({ commit }, data) {
         return api.deleteOrder(data).then((res) => {
             Vue.prototype.$Message.success('删除账单成功！');
         });
@@ -52,9 +52,9 @@ export default {
             commit(types.GET_USERS, res);
         });
     },
-    async [types.GET_ORDERS] ({ commit }) {
+    async [types.GET_BILLS] ({ commit }) {
         return api.getAllOrders().then((res) => {
-            commit(types.GET_ORDERS, res);
+            commit(types.GET_BILLS, res);
         });
     },
     async [types.GET_PROVIDERS] ({ commit }) {
@@ -62,7 +62,7 @@ export default {
             commit(types.GET_PROVIDERS, res);
         });
     },
-    async [types.GET_ORDERS_BY_PROVIDER_NAME] ({ commit }, name) {
+    async [types.GET_BILLS_BY_PROVIDER_NAME] ({ commit }, name) {
         return api.getOrdersByProviderName(name).then((res) => {
             return res;
         });
