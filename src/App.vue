@@ -27,4 +27,7 @@
   i {
     font-style: normal;
   }
+  .page {
+    padding: 20px;
+  }
 </style>

@@ -51,5 +51,7 @@
   }
   .content-container {
     position: relative;
+    margin: 20px;
+    background: #fff;
   }
 </style>
