@@ -33,4 +33,7 @@
   .component-margin {
     margin: 50px 0;
   }
+  .floatRight {
+    float: right;
+  }
 </style>

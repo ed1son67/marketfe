@@ -25,24 +25,25 @@
                 </Button>
             </template>
         </Table>
-        <CustomModal
-            :show-modal="showModal"
+        <Modal
+            :value="showModal"
             :title="title"
-            @confirm="handleConfirm"
+            :mask-closable="false"
+            @on-ok="handleConfirm"
+            @on-cancel="handleCancel"
         >
-            <p>你确定吗？</p>
-        </CustomModal>
+            <p>确认删除？</p>
+        </Modal>
     </div>
 </template>
 
 <script>
-    import { Table, Button } from 'view-design';
-    import CustomModal from './CustomModal';
+    import { Table, Button, Modal} from 'view-design';
     export default {
         name: 'CustomTable',
         components: {
-            CustomModal,
             Button,
+            Modal,
             Table
         },
         props: {
@@ -58,7 +59,7 @@
         data () {
           return {
               title: '',
-              currentData: '',
+              currentData: null,
               showModal: false,
               actionColumn: {
                   title: '操作',
@@ -74,6 +75,9 @@
             }
         },
         methods: {
+            handleCancel () {
+                this.showModal = false;
+            },
             handleConfirm () {
                 this.$emit('delete', this.currentData);
             },

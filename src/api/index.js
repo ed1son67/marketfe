@@ -59,19 +59,19 @@ export const modifyProvider = (data) => {
     return axios.post('/modifyProvider', data);
 };
 
-export const getAllOrders = (data) => {
+export const getAllBills = (data) => {
     return axios.get('/getAllOrders');
 };
 
-export const addOrder = (data) => {
+export const addBill = (data) => {
     return axios.post('/addOrder', data);
 };
 
-export const modifyOrder = (data) => {
+export const modifyBill = (data) => {
     return axios.post('/modifyOrder', data);
 };
 
-export const deleteOrder = (data) => {
+export const deleteBill = (data) => {
     return axios.post('/deleteOrder', data);
 };
 

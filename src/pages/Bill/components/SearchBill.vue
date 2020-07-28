@@ -11,7 +11,12 @@
                 <Input v-model="billFormData.providerName" type="text" placeholder="供应商名字" />
             </FormItem>
             <FormItem>
-                <Button type="primary" @click="handleSubmit('searchBillForm')">搜索</Button>
+                <Button
+                    type="primary"
+                    shape="circle"
+                    icon="ios-search"
+                    @click="handleSubmit('searchBillForm')"
+                ></Button>
             </FormItem>
         </Form>
     </div>
