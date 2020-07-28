@@ -3,6 +3,7 @@
         :columns="columns"
         :data="billsData"
         @delete="handleDelete"
+        @update="handleUpdate"
     />
 </template>
 
@@ -52,6 +53,9 @@
         methods: {
             handleDelete (data) {
                 this.$store.dispatch(types.DELETE_BILL, {id: data.id});
+            },
+            handleUpdate (data) {
+                this.$emit('update', data);
             }
         }
     };

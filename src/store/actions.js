@@ -61,13 +61,13 @@ export default {
     },
     async [types.MODIFY_BILL] ({ dispatch }, data) {
         return api.modifyBill(data).then((data) => {
-            Vue.prototype.$Message.success('修改密码成功！');
+            Vue.prototype.$Message.success('修改账单信息成功！');
             dispatch(types.GET_BILLS);
         });
     },
     async [types.MODIFY_PROVIDER] ({ dispatch }, data) {
         return api.modifyBill(data).then((data) => {
-            Vue.prototype.$Message.success('修改密码成功！');
+            Vue.prototype.$Message.success('修改供应商信息成功！');
             dispatch(types.GET_PROVIDERS);
         });
     },

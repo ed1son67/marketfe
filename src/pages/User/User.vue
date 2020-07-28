@@ -14,7 +14,6 @@
             :value="showModal"
             :mask-closable="false"
             :footer-hide="true"
-            @on-ok="handleConfirm"
             @on-cancel="handleCancel"
         >
             <ModalForm
@@ -64,9 +63,6 @@
             this.$store.dispatch(types.GET_USERS);
         },
         methods: {
-            handleCancel () {
-                this.showModal = false;
-            },
             handleConfirm () {
                 this.showModal = false;
             },
@@ -74,6 +70,9 @@
                 this.username = data.username;
                 this.showModal = true;
                 console.log(data);
+            },
+            handleCancel () {
+                this.showModal = false;
             },
             handleDelete (data) {
                 this.$store.dispatch(types.DELETE_USER, { id: data.id });
