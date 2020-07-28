@@ -30,4 +30,7 @@
   .page {
     padding: 20px;
   }
+  .component-margin {
+    margin: 50px 0;
+  }
 </style>

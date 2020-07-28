@@ -1,6 +1,7 @@
 <template>
     <Table
         border
+        class="component-margin"
         :columns="columnsComputed"
         :data="data"
     >

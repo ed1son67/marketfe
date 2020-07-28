@@ -1,24 +1,32 @@
 <template>
     <div class="page">
-        <div>
-            <div>所有用户信息：</div>
-            <CustomTable
-              :columns="columns"
-              :data="users"
-              @delete="handleDelete"
-            />
-        </div>
+        <Divider orientation="left">所有用户信息：</Divider>
+        <CustomTable
+            :columns="columns"
+            :data="users"
+            @delete="handleDelete"
+        />
+        <Divider orientation="left">添加用户：</Divider>
+        <UserForm />
+        <Divider orientation="left">修改密码</Divider>
+        <PasswordForm />
     </div>
 </template>
 
 <script>
     import CustomTable from '../../components/CustomTable';
+    import UserForm from './components/UserForm';
+    import PasswordForm from './components/PasswordForm';
     import types from '../../store/types';
     import { mapState } from 'vuex';
+    import { Divider } from 'view-design';
     export default {
         name: 'User',
         components: {
-            CustomTable
+            CustomTable,
+            UserForm,
+            PasswordForm,
+            Divider
         },
         data () {
             return {
