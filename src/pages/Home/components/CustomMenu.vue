@@ -65,11 +65,10 @@
             })
         },
         methods: {
-            selectMenuItem () {
+            selectMenuItem (name) {
                 console.log(name);
                 // 每一个item都有一个name，点击的时候根据name进行页面的切换
-                this.$router.push(name);
-                console.log(this.isAdmin);
+                this.$router.push('/' + name);
             }
         },
     };
