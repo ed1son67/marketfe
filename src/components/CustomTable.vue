@@ -25,22 +25,23 @@
                 </Button>
             </template>
         </Table>
-        <Modal
-            v-model="showModal"
+        <CustomModal
+            :show-modal="showModal"
             :title="title"
-            @on-ok="handleOk"
+            @confirm="handleConfirm"
         >
             <p>你确定吗？</p>
-        </Modal>
+        </CustomModal>
     </div>
 </template>
 
 <script>
-    import { Table, Button, Modal } from 'view-design';
+    import { Table, Button } from 'view-design';
+    import CustomModal from './CustomModal';
     export default {
         name: 'CustomTable',
         components: {
-            Modal,
+            CustomModal,
             Button,
             Table
         },
@@ -73,7 +74,7 @@
             }
         },
         methods: {
-            handleOk () {
+            handleConfirm () {
                 this.$emit('delete', this.currentData);
             },
             handleDelete (data) {

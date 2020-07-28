@@ -44,17 +44,19 @@
                         { required: true, message: '请输入用户名', trigger: 'blur' }
                     ],
                     password: [
-                        { required: true, message: '请输入密码.', trigger: 'blur' },
+                        { required: true, message: '请输入密码', trigger: 'blur' },
                         { type: 'string', min: 6, message: '密码不能少于6位', trigger: 'blur' }
                     ]
                 }
             };
         },
-        computed: {
-        },
         methods: {
             handleSubmit () {
-                this.$store.dispatch(types.ADD_USER, this.userForm);
+                this.$refs['userForm'].validate((valid) => {
+                    if (valid) {
+                        this.$store.dispatch(types.ADD_USER, this.userForm);
+                    }
+                });
             }
         }
     };
