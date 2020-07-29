@@ -10,7 +10,7 @@ const state = {
   bills: [],
   providers: [],
   hadLogin: false,
-  level: 1
+  level: 0
 };
 
 export default new Vuex.Store({
