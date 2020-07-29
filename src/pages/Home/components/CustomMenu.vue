@@ -15,23 +15,23 @@
                 账单管理
             </MenuItem>
         </Submenu>
-        <Submenu name="user">
+        <Submenu name="provider">
             <template slot="title">
-                <Icon type="ios-people" />
-                <span>用户模块</span>
+                <Icon type="ios-filing" />
+                <span>供应商模块</span>
             </template>
-            <MenuItem name="user">
-                用户管理
+            <MenuItem name="provider">
+                供应商管理
             </MenuItem>
         </Submenu>
         <div v-if="isAdmin">
-            <Submenu name="provider">
+            <Submenu name="user">
                 <template slot="title">
-                    <Icon type="ios-filing" />
-                    <span>供应商模块</span>
+                    <Icon type="ios-people" />
+                    <span>用户模块</span>
                 </template>
-                <MenuItem name="provider">
-                    供应商管理
+                <MenuItem name="user">
+                    用户管理
                 </MenuItem>
             </Submenu>
         </div>
