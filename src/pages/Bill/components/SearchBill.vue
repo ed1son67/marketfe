@@ -15,7 +15,7 @@
                     type="primary"
                     shape="circle"
                     icon="ios-search"
-                    @click="handleSubmit('searchBillForm')"
+                    @click="handleSubmit"
                 ></Button>
             </FormItem>
         </Form>

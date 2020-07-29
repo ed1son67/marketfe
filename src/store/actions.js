@@ -88,7 +88,8 @@ export default {
     },
     async [types.GET_BILLS_BY_PROVIDER_NAME] ({ commit }, name) {
         return api.getOrdersByProviderName(name).then((res) => {
-            commit(types.GET_PROVIDERS, res);
+            Vue.prototype.$Message.success('查询成功！');
+            commit(types.GET_BILLS, res);
         });
     }
 };
