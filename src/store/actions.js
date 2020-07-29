@@ -13,7 +13,7 @@ export default {
                 Vue.prototype.$Message.success('登陆成功！');
                 commit(types.LOGIN, level);
             } else {
-                Vue.prototype.$Message.error('登陆失败！');
+                Vue.prototype.$Message.error('密码或用户名错误！');
             }
         });
     },

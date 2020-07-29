@@ -9,7 +9,7 @@ const state = {
   users: [],
   bills: [],
   providers: [],
-  hadLogin: true,
+  hadLogin: false,
   level: 1
 };
 

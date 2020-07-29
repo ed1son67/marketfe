@@ -65,6 +65,8 @@ v-model="password"
         this.$store.dispatch(types.LOGIN, {
           username: this.username,
           password: this.password
+        }).then(() => {
+          this.$router.push('/welcome');
         });
       }
     }

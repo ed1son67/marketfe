@@ -52,10 +52,10 @@ const router = new VueRouter({
 
 router.beforeEach((to, from, next) => {
   // 如果没有登陆，强制跳转到登陆页面
-  if (store.state.hadLogin !== true) {
-    next(false);
-  } else {
+  if (store.state.hadLogin === true || to.name === 'Login') {
     next();
+  } else {
+    next({ name: 'Login' });
   }
 });
 
